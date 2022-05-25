@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.3'
@@ -29,7 +29,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
     }
@@ -37,12 +37,12 @@ android {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
 dependencies {
-    provided 'com.google.android.gms:play-services-drive:17.0.0'
+    compileOnly 'com.google.android.gms:play-services-drive:17.0.0'
     implementation ('com.google.android.gms:play-services-auth:17.0.0') {
         force = true;
     }
@@ -53,5 +53,5 @@ dependencies {
     implementation('com.google.apis:google-api-services-drive:v3-rev136-1.25.0') {
         exclude group: 'org.apache.httpcomponents'
     }
-    provided 'com.facebook.react:react-native:+'
+    compileOnly 'com.facebook.react:react-native:+'
 }
